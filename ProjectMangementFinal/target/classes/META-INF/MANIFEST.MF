@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: ProjectMangementFinal
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Deago
+Built-By: Admin
 Implementation-Vendor-Id: com.cognizant.projectmanagement
 Build-Jdk: 1.8.0_144
 Implementation-URL: http://projects.spring.io/spring-boot/ProjectMange

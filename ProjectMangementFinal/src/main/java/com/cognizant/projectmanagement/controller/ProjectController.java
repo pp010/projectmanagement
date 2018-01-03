@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ import com.cognizant.projectmanagement.model.ProjectObj;
 import com.cognizant.projectmanagement.repository.ProjectRepository;
 import com.cognizant.projectmanagement.repository.TaskRepository;
 import com.cognizant.projectmanagement.repository.UserRepository;
-
+@CrossOrigin
 @RestController
 @RequestMapping(path="/project")
 public class ProjectController {

@@ -18,7 +18,7 @@
 			<tr>
 				<td>
 					<div class="form-group">
-						<label> LastName : </label>
+						<label for="lastName"> LastName : </label>
 					</div>
 				</td>
 				<td>
@@ -32,7 +32,7 @@
 			<tr>
 				<td>
 					<div class="form-group">
-						<label> Employee ID : </label>
+						<label for="employeeId"> EmployeeID : </label>
 					</div>
 				</td>
 				<td>
@@ -46,8 +46,8 @@
 				<td></td>
 				<td>
 					<div class="form-group">
-						<input type="button" [value]="editUserFlag ? 'Update' : 'Add'" class="btn btn-default" (click)="onSubmit(user);addUserForm.reset();" [disabled]="!addUserForm.form.valid"/>
-						<input type="button" value="Reset" class="btn btn-default" (click)="addUserForm.reset()"/>
+						<input type="button" [value]="editUserFlag ? 'Update' : 'Add'" class="btn btn-success" (click)="onSubmit(user);addUserForm.reset();" [disabled]="!addUserForm.form.valid"/>
+						<input type="button" value="Reset" class="btn btn-danger" (click)="addUserForm.reset()"/>
 					</div>
 				</td>
 			</tr>
@@ -55,6 +55,7 @@
 			<tr>
 				<td>
 					<input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search" name="searchText">
+
 				</td>
 				<td>
 					<label class="form-group">&nbsp;&nbsp;Sort&nbsp;</label>
@@ -64,7 +65,7 @@
 				</td>
 			</tr>
 			<tr> <hr style="border-top: dotted 2px; width: 270%" /> </tr>
-		</table>			
+		</table>
 	</form>
 
 	<div *ngFor="let user of users | filter:searchText">
@@ -88,7 +89,7 @@
 			<br>
 			<tr >
 				<td>
-					<input class="form-control" [(ngModel)]="user.employeeId" placeholder="employeeId" readonly> 
+					<input class="form-control" [(ngModel)]="user.employeeId" placeholder="employeeId" readonly>
 				</td>
 			</tr>
 			<br>

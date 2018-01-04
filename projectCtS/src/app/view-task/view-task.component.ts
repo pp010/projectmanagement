@@ -16,10 +16,11 @@ export class ViewTaskComponent implements OnInit {
   projects: Project[];
   tasks: Task[];
 
-  constructor(private taskService: TaskService, private projectService: ProjectService,private router:Router) { }
+  constructor(private taskService: TaskService, private projectService: ProjectService,private router:Router) { this.getAllTask();}
 
   ngOnInit() {
   	this.getProjects();
+
   }
 
   getProjects(): void{
@@ -29,6 +30,10 @@ export class ViewTaskComponent implements OnInit {
 
    getTasksByProject(id: number): void{
     this.taskService.getTasksByProject(id)
+    .subscribe(tasks => this.tasks = tasks)
+  }
+  getAllTask():void{
+    this.taskService.getAllTasks()
     .subscribe(tasks => this.tasks = tasks)
   }
 

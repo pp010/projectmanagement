@@ -18,7 +18,7 @@ const httpOptions = {
 @Injectable()
 export class TaskService {
 
-  private taskUrl = "http://localhost:8080/task"; 
+  private taskUrl = "http://localhost:8080/task";
   private rootUrl = "http://localhost:8080";
 
   public task = null;
@@ -26,7 +26,7 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  addTask (task: Task): Observable<void> {    
+  addTask (task: Task): Observable<void> {
     var addUrl = this.taskUrl + "/add";
     return this.http.post<any>(addUrl, task, httpOptions).pipe(
       tap(() => this.log(`added task`)),
@@ -55,6 +55,14 @@ export class TaskService {
       tap(_ => this.log(`updated task`)),
       catchError(this.handleError<any>('updateUser'))
     );
+  }
+
+  getAllTasks(): Observable<Task[]>{
+	return this.http.get<Task[]>(this.rootUrl+"/task/all")
+      .pipe(
+        tap(Tasks => this.log(`fetched Tasks`)),
+        catchError(this.handleError('getParentTask', []))
+      );
   }
 
   /**
